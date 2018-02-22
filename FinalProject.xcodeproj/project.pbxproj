@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */; };
+		9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88ECF3203F725100F69286 /* HomeViewController.swift */; };
 		9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD697AA203F38B8007D8E21 /* AppDelegate.swift */; };
 		9BD697AD203F38B8007D8E21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD697AC203F38B8007D8E21 /* ViewController.swift */; };
 		9BD697B0203F38B8007D8E21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD697AE203F38B8007D8E21 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9B88ECF3203F725100F69286 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9BD697A7203F38B8007D8E21 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD697AA203F38B8007D8E21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD697AC203F38B8007D8E21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				9BD697B1203F38B8007D8E21 /* Assets.xcassets */,
 				9BD697B3203F38B9007D8E21 /* LaunchScreen.storyboard */,
 				9BD697B6203F38B9007D8E21 /* Info.plist */,
+				9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */,
+				9B88ECF3203F725100F69286 /* HomeViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */,
 				9BD697AD203F38B8007D8E21 /* ViewController.swift in Sources */,
 				9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */,
+				9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
