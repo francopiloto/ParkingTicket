@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8415714420449BB90026C1BA /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415714320449BB90026C1BA /* Customer.swift */; };
 		9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */; };
 		9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88ECF3203F725100F69286 /* HomeViewController.swift */; };
 		9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD697AA203F38B8007D8E21 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8415714320449BB90026C1BA /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9B88ECF3203F725100F69286 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9BD697A7203F38B8007D8E21 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */,
 				9B88ECF3203F725100F69286 /* HomeViewController.swift */,
 				9BED52D6204091C2008DD693 /* SplashViewController.swift */,
+				8415714320449BB90026C1BA /* Customer.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */,
 				9BD697AD203F38B8007D8E21 /* ViewController.swift in Sources */,
 				9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */,
+				8415714420449BB90026C1BA /* Customer.swift in Sources */,
 				9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */,
 				9BED52D7204091C2008DD693 /* SplashViewController.swift in Sources */,
 			);
