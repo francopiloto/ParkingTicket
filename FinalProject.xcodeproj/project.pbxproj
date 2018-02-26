@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8415714420449BB90026C1BA /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415714320449BB90026C1BA /* Customer.swift */; };
+		9B07068A20449877004E9D63 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068920449877004E9D63 /* MenuTableViewController.swift */; };
+		9B07068C2044AE7E004E9D63 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */; };
+		9B0706902044B401004E9D63 /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068F2044B401004E9D63 /* AddTicketViewController.swift */; };
 		9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */; };
 		9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88ECF3203F725100F69286 /* HomeViewController.swift */; };
 		9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD697AA203F38B8007D8E21 /* AppDelegate.swift */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		8415714320449BB90026C1BA /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		9B07068920449877004E9D63 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		9B07068F2044B401004E9D63 /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
 		9B88ECF1203F6F7100F69286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9B88ECF3203F725100F69286 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9BD697A7203F38B8007D8E21 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +81,9 @@
 				9B88ECF3203F725100F69286 /* HomeViewController.swift */,
 				9BED52D6204091C2008DD693 /* SplashViewController.swift */,
 				8415714320449BB90026C1BA /* Customer.swift */,
+				9B07068920449877004E9D63 /* MenuTableViewController.swift */,
+				9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */,
+				9B07068F2044B401004E9D63 /* AddTicketViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -161,11 +170,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */,
+				9B07068A20449877004E9D63 /* MenuTableViewController.swift in Sources */,
 				9BD697AD203F38B8007D8E21 /* ViewController.swift in Sources */,
+				9B07068C2044AE7E004E9D63 /* InstructionViewController.swift in Sources */,
 				9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */,
 				8415714420449BB90026C1BA /* Customer.swift in Sources */,
 				9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */,
 				9BED52D7204091C2008DD693 /* SplashViewController.swift in Sources */,
+				9B0706902044B401004E9D63 /* AddTicketViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

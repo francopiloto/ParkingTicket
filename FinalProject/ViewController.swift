@@ -15,6 +15,7 @@ class ViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        Customer.createAccount(fullName: "a", email: "b", password: "c")
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +27,7 @@ class ViewController: UIViewController
         if Customer.authenticate(email: txtEmail.text ?? "", password: txtPassword.text ?? "") != nil
         {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
-            let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController;
+            let homeViewController = storyBoard.instantiateViewController(withIdentifier: "MenuVC") as! MenuTableViewController;
             self.present(homeViewController, animated: true, completion: nil);
         }
         else
