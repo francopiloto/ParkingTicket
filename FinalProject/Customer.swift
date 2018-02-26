@@ -17,7 +17,7 @@ class Customer
     
     private static var customerList = [Int:Customer]();
     
-    init(id:Int, fullName:String, email:String, password:String)
+    private init(id:Int, fullName:String, email:String, password:String)
     {
         self.id = id;
         self.fullName = fullName;
@@ -27,6 +27,21 @@ class Customer
     
     func verifyLogin(email:String, password:String) -> Bool {
         return self.email == email && self.password == password;
+    }
+    
+    static func createAccount(fullName:String, email:String, password:String) -> Customer?
+    {
+        for customer in customerList.values
+        {
+            if customer.email == email {
+                return nil;
+            }
+        }
+        
+        let customer = Customer(id:customerList.count, fullName:fullName, email:email, password:password);
+        customerList[customer.id] = customer;
+        
+        return customer;
     }
     
     static func authenticate(email:String, password:String) -> Customer?

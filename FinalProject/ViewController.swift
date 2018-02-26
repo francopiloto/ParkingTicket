@@ -21,7 +21,7 @@ class ViewController: UIViewController
         super.didReceiveMemoryWarning();
     }
 
-    @IBAction func btnLoginClicked(_ sender: UIButton)
+    @IBAction func btnLoginClick(_ sender: UIButton)
     {
         if Customer.authenticate(email: txtEmail.text ?? "", password: txtPassword.text ?? "") != nil
         {
