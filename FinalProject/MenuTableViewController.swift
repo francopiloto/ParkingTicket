@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
-    var viewName = [["HomeVC", "AddTicketVC", "LocationVC", "ReportVC"],["ProfileVC", "InstructionVC", "ContacVC", "LogoutVC"]]
+    var viewName = [["HomeVC", "AddTicketVC", "LocationVC", "ReportVC"],["ProfileVC", "InstructionVC", "ContacVC", "LoginVC"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()

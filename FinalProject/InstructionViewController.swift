@@ -10,9 +10,11 @@ import UIKit
 
 class InstructionViewController: UIViewController {
 
+    @IBOutlet weak var myInstructionView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadFile()
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +23,13 @@ class InstructionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func loadFile()
+    {
+        let localfilePath = Bundle.main.url(forResource: "instruction", withExtension: "html");
+        let myRequest = NSURLRequest(url: localfilePath!);
+        myInstructionView.loadRequest(myRequest as URLRequest);
+    }
+    
     /*
     // MARK: - Navigation
 

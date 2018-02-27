@@ -12,10 +12,26 @@ class ViewController: UIViewController
 {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var lblVersion: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad();
         Customer.createAccount(fullName: "a", email: "b", password: "c")
+        
+        var versionComplete = ""
+        
+        if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") {
+             versionComplete += "V \(version)"
+        }
+        if let versionCode = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") {
+             versionComplete += "(\(versionCode))"
+        }
+       
+       lblVersion.text = versionComplete
+       txtEmail.text = "b"
+       txtPassword.text = "c"
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
