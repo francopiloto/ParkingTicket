@@ -352,6 +352,13 @@
                         <color key="backgroundColor" red="0.66274509800000003" green="0.20784313730000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cbf-AU-pu0"/>
                     </view>
+                    <connections>
+                        <outlet property="txtColor" destination="4Q7-9C-kVC" id="Lyl-lF-Wfq"/>
+                        <outlet property="txtLane" destination="Ti8-He-eaC" id="AZY-s7-OI0"/>
+                        <outlet property="txtTiming" destination="2Cy-mn-Zdd" id="j6g-hl-kF2"/>
+                        <outlet property="txtVehicleBrand" destination="ooZ-iu-4Zf" id="6Ez-EP-sOO"/>
+                        <outlet property="txtVehicleNumber" destination="PYa-AZ-5Mc" id="Q17-Sx-P8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tda-Ns-emr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -539,6 +546,6 @@
         <image name="logo.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n2C-mz-Wx6"/>
+        <segue reference="fFh-Gh-oMN"/>
     </inferredMetricsTieBreakers>
 </document>
