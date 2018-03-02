@@ -25,7 +25,10 @@ class AddTicketViewController: UIViewController
     {
         super.viewDidLoad();
         
-        data.append(TickedData(txt:txtVehicleBrand, options:["Acura",  "Alfa-Romeo", "Audi", "Bentley", "BMW","Buick","Cadillac","Chevrolet","Dodge","Ferrari","Fiat","Ford", "GMC","Honda","Hyundai","Infiniti","Jaguar","KIA","Lamborghini","Land-Rover","Mercedes-Benz","Mini-Cooper","Nissan","Porsche","Ram","Rolls-Royce","Subaru","Tesla","Toyota","Volkswagen"]));
+        data.append(TickedData(txt:txtVehicleBrand, options:["Acura",  "Alfa-Romeo", "Audi", "Bentley", "BMW","Buick","Cadillac","Chevrolet","Dodge","Ferrari","Fiat","Ford", "GMC","Honda","Hyundai","Infiniti","Jaguar","KIA","Lamborghini","Land-Rover","Mercedes-Benz","Mini-Cooper","Nissan","Porsche","Ram","Rolls-Royce","Subaru","Tesla","Toyota","Volkswagen"], onChange: {(selected:Int) in
+            let maker = self.data[self.selectedComponent].options[selected];
+            self.imgMakerLogo.image = UIImage(named: maker.lowercased() + ".png");
+        }));
         
         for index in 0...data.count - 1
         {
@@ -45,9 +48,14 @@ class AddTicketViewController: UIViewController
         pickerView.delegate = self;
         pickerView.dataSource = self;
         pickerView.backgroundColor = UIColor.white;
-        pickerView.selectRow(data[selectedComponent].selected, inComponent: 0, animated: true);
-        
         textField.inputView = pickerView;
+        
+        pickerView.selectRow(data[selectedComponent].selected, inComponent: 0, animated: true);
+        selectOption(option: data[selectedComponent].selected);
+    }
+    
+    private func selectOption(option:Int) {
+        data[selectedComponent].select(index: option);
     }
 }
 
@@ -56,14 +64,6 @@ extension AddTicketViewController : UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
         selectedComponent = textField.tag;
-        
-        if textField.text == nil || (textField.text?.isEmpty)!
-        {
-            //let maker = data[selectedIndex].options[0];
-            //textField.text = maker;
-            //imgMakerLogo.image = UIImage(named: maker.lowercased() + ".png");
-        }
-        
         showOptions(textField);
     }
 }
@@ -75,10 +75,7 @@ extension AddTicketViewController : UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        data[selectedComponent].select(index: row);
-        
-        let maker = data[selectedComponent].options[row];
-        imgMakerLogo.image = UIImage(named: maker.lowercased() + ".png");
+        selectOption(option: row);
     }
 }
 
@@ -98,16 +95,22 @@ fileprivate class TickedData
     var txt:UITextField;
     var options:[String];
     var selected = 0;
+    var onChange: ((Int)->Void)?;
     
-    init(txt:UITextField, options:[String])
+    init(txt:UITextField, options:[String], onChange: ((Int)->Void)?)
     {
         self.txt = txt;
         self.options = options;
+        self.onChange = onChange;
     }
     
     func select(index:Int)
     {
         txt.text = options[index];
         selected = index;
+        
+        if onChange != nil {
+            onChange!(selected);
+        }
     }
 }
