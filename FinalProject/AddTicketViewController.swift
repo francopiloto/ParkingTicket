@@ -12,11 +12,13 @@ class AddTicketViewController: UIViewController
 {
     @IBOutlet weak var txtVehicleNumber: UITextField!
     @IBOutlet weak var txtVehicleBrand: UITextField!
-    @IBOutlet weak var txtColor: UITextField!
-    @IBOutlet weak var txtTiming: UITextField!
-    @IBOutlet weak var txtLane: UITextField!
-    @IBOutlet weak var imgMakerLogo: UIImageView!
+    @IBOutlet weak var txtVehicleColor: UITextField!
+    @IBOutlet weak var txtParkingTime: UITextField!
+    @IBOutlet weak var txtParkingLane: UITextField!
+    @IBOutlet weak var txtParkingSpot: UITextField!
+    @IBOutlet weak var txtPaymentMethod: UITextField!
     
+    @IBOutlet weak var imgMakerLogo: UIImageView!
     
     private var data = [TickedData]();
     private var selectedComponent = 0;
@@ -29,6 +31,12 @@ class AddTicketViewController: UIViewController
             let maker = self.data[self.selectedComponent].options[selected];
             self.imgMakerLogo.image = UIImage(named: maker.lowercased() + ".png");
         }));
+        
+        data.append(TickedData(txt:txtVehicleColor, options:["White","Purple","White Diamond Pearl","Silver","Red","Black","Grey","Blue","Brown"], onChange: nil));
+        data.append(TickedData(txt:txtParkingTime, options:["1/2 Hr.", "1 Hr.", "2 Hr.", "3 Hr.", "Day Ends"], onChange: nil));
+        data.append(TickedData(txt:txtParkingLane, options:["Lane A", "Lane B","Lane C","Lane D","Lane E"], onChange: nil));
+        data.append(TickedData(txt:txtParkingSpot, options:["P1","P2","P3","P4","P5","P6","P7","P8"], onChange: nil));
+        data.append(TickedData(txt:txtPaymentMethod, options:["Credit Card", "Debit Card", "Cash"], onChange: nil));
         
         for index in 0...data.count - 1
         {

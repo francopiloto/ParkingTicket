@@ -332,14 +332,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lane" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti8-He-eaC">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parking Lane" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti8-He-eaC">
                                 <rect key="frame" x="24" y="239" width="325" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o99-fe-TZH">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parking Spot Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o99-fe-TZH">
                                 <rect key="frame" x="24" y="285" width="325" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -368,10 +368,12 @@
                     </view>
                     <connections>
                         <outlet property="imgMakerLogo" destination="qZk-dZ-55P" id="zBS-CC-FXA"/>
-                        <outlet property="txtColor" destination="4Q7-9C-kVC" id="Lyl-lF-Wfq"/>
-                        <outlet property="txtLane" destination="Ti8-He-eaC" id="AZY-s7-OI0"/>
-                        <outlet property="txtTiming" destination="2Cy-mn-Zdd" id="j6g-hl-kF2"/>
+                        <outlet property="txtParkingLane" destination="Ti8-He-eaC" id="AZY-s7-OI0"/>
+                        <outlet property="txtParkingSpot" destination="o99-fe-TZH" id="Vvn-Xt-IWY"/>
+                        <outlet property="txtParkingTime" destination="2Cy-mn-Zdd" id="j6g-hl-kF2"/>
+                        <outlet property="txtPaymentMethod" destination="XUi-qw-ysU" id="9yY-Sj-fO6"/>
                         <outlet property="txtVehicleBrand" destination="ooZ-iu-4Zf" id="6Ez-EP-sOO"/>
+                        <outlet property="txtVehicleColor" destination="4Q7-9C-kVC" id="Lyl-lF-Wfq"/>
                         <outlet property="txtVehicleNumber" destination="PYa-AZ-5Mc" id="Q17-Sx-P8a"/>
                     </connections>
                 </viewController>
