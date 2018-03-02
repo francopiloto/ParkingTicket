@@ -16,7 +16,7 @@ class Ticket
     var timingPark: Int;
     var lanePark: Int;
     var floorPark: Int;
-    var paymentMethod: Int;
+    var paymentMethod: Int;    
     
     init(vehicleNumber: String, vehicleBrand: String,vehicleColor: Int, timingPark: Int, lanePark: Int, floorPark: Int, paymentMethod: Int)
     {
