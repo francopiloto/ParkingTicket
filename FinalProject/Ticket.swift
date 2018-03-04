@@ -27,6 +27,10 @@ class Ticket
         tickets.append(ticket);
     }
     
+    static func numTickets() -> Int {
+        return tickets.count;
+    }
+    
     init(vehicleNumber: String, vehicleMaker: String,vehicleColor: String,
          parkingTime: String, parkingLane: String, parkingSpot: String,
          paymentMethod: String, price:Double)
