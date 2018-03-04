@@ -18,6 +18,9 @@ class Ticket
     var parkingSpot: String;
     var paymentMethod: String;
     
+    var date:Date;
+    var price:Double;
+    
     private static var tickets = [Ticket]();
     
     static func addTicket(ticket:Ticket) {
@@ -26,7 +29,7 @@ class Ticket
     
     init(vehicleNumber: String, vehicleMaker: String,vehicleColor: String,
          parkingTime: String, parkingLane: String, parkingSpot: String,
-         paymentMethod: String)
+         paymentMethod: String, price:Double)
     {
         self.vehicleNumber = vehicleNumber;
         self.vehicleMaker = vehicleMaker;
@@ -35,5 +38,8 @@ class Ticket
         self.parkingLane = parkingLane;
         self.parkingSpot = parkingSpot;
         self.paymentMethod = paymentMethod;
+        
+        self.date = Date();
+        self.price = price;
     }
 }

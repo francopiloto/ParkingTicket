@@ -51,6 +51,7 @@
 		849680932049C01300CF7627 /* jaguar.png in Resources */ = {isa = PBXBuildFile; fileRef = 849680722049C01300CF7627 /* jaguar.png */; };
 		849680952049E12700CF7627 /* kia.png in Resources */ = {isa = PBXBuildFile; fileRef = 849680942049E12700CF7627 /* kia.png */; };
 		849680972049E43E00CF7627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849680962049E43E00CF7627 /* LaunchScreen.storyboard */; };
+		84968099204C829C00CF7627 /* DisplayTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84968098204C829C00CF7627 /* DisplayTicketViewController.swift */; };
 		9B07068A20449877004E9D63 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068920449877004E9D63 /* MenuTableViewController.swift */; };
 		9B07068C2044AE7E004E9D63 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */; };
 		9B0706902044B401004E9D63 /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068F2044B401004E9D63 /* AddTicketViewController.swift */; };
@@ -111,6 +112,7 @@
 		849680722049C01300CF7627 /* jaguar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaguar.png; sourceTree = "<group>"; };
 		849680942049E12700CF7627 /* kia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kia.png; sourceTree = "<group>"; };
 		849680962049E43E00CF7627 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84968098204C829C00CF7627 /* DisplayTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTicketViewController.swift; sourceTree = "<group>"; };
 		9B07068920449877004E9D63 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		9B07068F2044B401004E9D63 /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				9B07068F2044B401004E9D63 /* AddTicketViewController.swift */,
 				9B2122C12045E84D0005994E /* Ticket.swift */,
 				849680962049E43E00CF7627 /* LaunchScreen.storyboard */,
+				84968098204C829C00CF7627 /* DisplayTicketViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				9BD697AD203F38B8007D8E21 /* ViewController.swift in Sources */,
 				9B07068C2044AE7E004E9D63 /* InstructionViewController.swift in Sources */,
 				9BD697AB203F38B8007D8E21 /* AppDelegate.swift in Sources */,
+				84968099204C829C00CF7627 /* DisplayTicketViewController.swift in Sources */,
 				8415714420449BB90026C1BA /* Customer.swift in Sources */,
 				9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */,
 				9B2122C22045E84D0005994E /* Ticket.swift in Sources */,

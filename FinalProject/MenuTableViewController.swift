@@ -8,9 +8,12 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
-
-    var viewName = [["HomeVC", "AddTicketVC", "LocationVC", "ReportVC"],["ProfileVC", "InstructionVC", "ContacVC", "LoginVC"]]
+class MenuTableViewController: UITableViewController
+{
+    var viewName = [
+        ["HomeVC", "AddTicketVC", "LocationVC", "ReportVC"],
+        ["ProfileVC", "InstructionVC", "ContactVC", "LoginVC"]
+    ];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,30 +26,22 @@ class MenuTableViewController: UITableViewController {
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning();
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        return viewName.count;
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 4
+        return viewName[section].count;
     }
-
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-           
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let viewController = storyBoard.instantiateViewController(withIdentifier: viewName[indexPath.section][indexPath.row]);
         self.present(viewController, animated: true, completion: nil);
-        
     }
     
     

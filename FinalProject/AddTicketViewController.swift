@@ -25,6 +25,7 @@ class AddTicketViewController: UIViewController
     
     private var data = [TickedData]();
     private var selectedComponent = 0;
+    private let prices = [5.00,7.25,8.50,10.00,15.00];
     
     override func viewDidLoad()
     {
@@ -59,8 +60,7 @@ class AddTicketViewController: UIViewController
             onChange:
             {
                 (selected:Int) in
-                let prices = [5.00,7.25,8.50,10.00,15.00];
-                self.lblCost.text = String(format: "$ %.02f", prices[selected]);
+                self.lblCost.text = String(format: "$ %.02f", self.prices[selected]);
             }));
         
         data.append(TickedData(txt:txtParkingLane,
@@ -156,14 +156,23 @@ class AddTicketViewController: UIViewController
     
     private func addTicket()
     {
-        Ticket.addTicket(ticket:Ticket(
+        let ticket = Ticket(
             vehicleNumber: txtVehicleNumber.text!,
             vehicleMaker: txtVehicleMaker.text!,
             vehicleColor: txtVehicleColor.text!,
             parkingTime: txtParkingTime.text!,
             parkingLane: txtParkingLane.text!,
             parkingSpot: txtParkingSpot.text!,
-            paymentMethod: txtPaymentMethod.text!));
+            paymentMethod: txtPaymentMethod.text!,
+            price:prices[data[txtParkingTime.tag].selected]);
+        
+        Ticket.addTicket(ticket:ticket);
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let displayTicketVC = storyBoard.instantiateViewController(withIdentifier: "DisplayTicketVC") as! DisplayTicketViewController;
+        displayTicketVC.ticket = ticket;
+        
+        self.present(displayTicketVC, animated: true, completion: nil);
     }
 }
 
