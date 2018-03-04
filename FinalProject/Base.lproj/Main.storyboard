@@ -399,8 +399,8 @@
                         <outlet property="txtParkingSpot" destination="o99-fe-TZH" id="Vvn-Xt-IWY"/>
                         <outlet property="txtParkingTime" destination="2Cy-mn-Zdd" id="j6g-hl-kF2"/>
                         <outlet property="txtPaymentMethod" destination="XUi-qw-ysU" id="9yY-Sj-fO6"/>
-                        <outlet property="txtVehicleBrand" destination="ooZ-iu-4Zf" id="6Ez-EP-sOO"/>
                         <outlet property="txtVehicleColor" destination="4Q7-9C-kVC" id="Lyl-lF-Wfq"/>
+                        <outlet property="txtVehicleMaker" destination="ooZ-iu-4Zf" id="6Ez-EP-sOO"/>
                         <outlet property="txtVehicleNumber" destination="PYa-AZ-5Mc" id="Q17-Sx-P8a"/>
                     </connections>
                 </viewController>

@@ -11,21 +11,29 @@ import UIKit
 class Ticket
 {
     var vehicleNumber: String;
-    var vehicleBrand: String;
-    var vehicleColor: Int;
-    var timingPark: Int;
-    var lanePark: Int;
-    var floorPark: Int;
-    var paymentMethod: Int;    
+    var vehicleMaker: String;
+    var vehicleColor: String;
+    var parkingTime: String;
+    var parkingLane: String;
+    var parkingSpot: String;
+    var paymentMethod: String;
     
-    init(vehicleNumber: String, vehicleBrand: String,vehicleColor: Int, timingPark: Int, lanePark: Int, floorPark: Int, paymentMethod: Int)
+    private static var tickets = [Ticket]();
+    
+    static func addTicket(ticket:Ticket) {
+        tickets.append(ticket);
+    }
+    
+    init(vehicleNumber: String, vehicleMaker: String,vehicleColor: String,
+         parkingTime: String, parkingLane: String, parkingSpot: String,
+         paymentMethod: String)
     {
         self.vehicleNumber = vehicleNumber;
-        self.vehicleBrand = vehicleBrand;
+        self.vehicleMaker = vehicleMaker;
         self.vehicleColor = vehicleColor;
-        self.timingPark = timingPark;
-        self.lanePark = lanePark;
-        self.floorPark = floorPark;
+        self.parkingTime = parkingTime;
+        self.parkingLane = parkingLane;
+        self.parkingSpot = parkingSpot;
         self.paymentMethod = paymentMethod;
     }
 }
