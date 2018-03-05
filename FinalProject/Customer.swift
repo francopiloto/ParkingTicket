@@ -10,12 +10,14 @@ import UIKit
 
 class Customer
 {
-    private var id:Int;
-    private var fullName:String;
-    private var email:String;
-    private var password:String;
+    var id:Int;
+    var fullName:String;
+    var email:String;
+    var password:String;
+    var phoneNumber:String?;
     
     private static var customerList = [Int:Customer]();
+    private static var currentUser:Customer?;
     
     private init(id:Int, fullName:String, email:String, password:String)
     {
@@ -48,11 +50,18 @@ class Customer
     {
         for customer in customerList.values
         {
-            if customer.verifyLogin(email: email, password: password) {
+            if customer.verifyLogin(email: email, password: password)
+            {
+                currentUser = customer;
                 return customer;
             }
         }
         
+        currentUser = nil;
         return nil;
+    }
+    
+    static func getAuthenticatedUser() -> Customer? {
+        return currentUser;
     }
 }

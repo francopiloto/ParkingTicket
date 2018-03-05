@@ -8,28 +8,23 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class ProfileViewController: UIViewController
+{
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var txtFullName: UITextField!
+    @IBOutlet weak var txtVehicleNumber: UITextField!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad();
+        
+        let user = Customer.getAuthenticatedUser();
+        
+        lblEmail.text = "Email: \(user?.email ?? "")";
+        txtFullName.text = user?.fullName;
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning();
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

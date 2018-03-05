@@ -1047,6 +1047,11 @@
                         <color key="backgroundColor" red="0.66274509800000003" green="0.20784313730000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ZYT-8D-6wl"/>
                     </view>
+                    <connections>
+                        <outlet property="lblEmail" destination="Mdf-03-Zu6" id="sim-mk-8qI"/>
+                        <outlet property="txtFullName" destination="1Z7-M4-KdM" id="Kfw-PE-Uws"/>
+                        <outlet property="txtVehicleNumber" destination="Lsy-Bd-dFr" id="7PF-dN-zEU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXi-s9-RqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
