@@ -8,44 +8,46 @@
 
 import UIKit
 
-class ReportTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+class ReportTableViewController: UITableViewController
+{
+    override func viewDidLoad()
+    {
+        super.viewDidLoad();
+        tableView.rowHeight = 200;
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning();
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1;
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Ticket.numTickets();
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TicketCell", for: indexPath) as! TicketViewCell;
+        
+        let ticket = Ticket.getTicket(index: indexPath.row);
+        cell.imgMakerLogo.image = UIImage(named: ticket.vehicleMaker.lowercased() + ".png");
+        
+        let dateFormatter = DateFormatter();
+        dateFormatter.dateFormat = "  E, d MMM yyyy HH:mm:ss";
+        cell.lblTicketDate.text = dateFormatter.string(from: ticket.date);
+        cell.lblTicketPrice.text = String(format: "$ %.02f", ticket.price);
+        
+        cell.lblVehicleNumberValue.text = ticket.vehicleNumber;
+        cell.lblVehicleMakerValue.text = ticket.vehicleMaker;
+        cell.lblVehicleColorValue.text = ticket.vehicleColor;
+        cell.lblParkingInfoValue.text = "\(ticket.parkingTime) \(ticket.parkingLane) \(ticket.parkingSpot)";
+        cell.lblPaymentInfoValue.text = ticket.paymentMethod;
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

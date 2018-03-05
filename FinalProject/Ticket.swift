@@ -31,6 +31,10 @@ class Ticket
         return tickets.count;
     }
     
+    static func getTicket(index:Int) -> Ticket {
+        return tickets[index];
+    }
+    
     init(vehicleNumber: String, vehicleMaker: String,vehicleColor: String,
          parkingTime: String, parkingLane: String, parkingSpot: String,
          paymentMethod: String, price:Double)

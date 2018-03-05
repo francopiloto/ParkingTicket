@@ -14,6 +14,7 @@ class DisplayTicketViewController: UIViewController
     @IBOutlet weak var lblTicketDate: UILabel!
     @IBOutlet weak var lblTicketPrice: UILabel!
     @IBOutlet weak var lblVehicleNumberValue: UILabel!
+    @IBOutlet weak var lblVehicleMakerValue: UILabel!
     @IBOutlet weak var lblVehicleColorValue: UILabel!
     @IBOutlet weak var lblParkingInfoValue: UILabel!
     @IBOutlet weak var lblPaymentInfoValue: UILabel!
@@ -32,6 +33,7 @@ class DisplayTicketViewController: UIViewController
         
         lblTicketPrice.text = String(format: "$ %.02f", (ticket?.price)!);
         lblVehicleNumberValue.text = ticket?.vehicleNumber;
+        lblVehicleMakerValue.text = ticket?.vehicleMaker;
         lblVehicleColorValue.text = ticket?.vehicleColor;
         lblParkingInfoValue.text = "\(ticket?.parkingTime ?? "") \(ticket?.parkingLane ?? "") \(ticket?.parkingSpot ?? "")";
         lblPaymentInfoValue.text = ticket?.paymentMethod;
