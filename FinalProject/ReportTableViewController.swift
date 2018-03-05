@@ -1,20 +1,15 @@
 //
-//  MenuTableViewController.swift
+//  ReportTableViewController.swift
 //  FinalProject
 //
-//  Created by MacStudent on 2018-02-26.
+//  Created by Franco on 3/5/18.
 //  Copyright © 2018 MacStudent. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewController : UITableViewController
-{
-    var viewName = [
-        ["HomeVC", "AddTicketVC", "LocationVC", "ReportVC"],
-        ["ProfileVC", "InstructionVC", "ContactVC", "LoginVC"]
-    ];
-    
+class ReportTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,25 +21,22 @@ class MenuTableViewController : UITableViewController
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning();
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewName.count;
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewName[section].count;
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
-        let viewController = storyBoard.instantiateViewController(withIdentifier: viewName[indexPath.section][indexPath.row]);
-        self.present(viewController, animated: true, completion: nil);
-    }
-    
-    
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

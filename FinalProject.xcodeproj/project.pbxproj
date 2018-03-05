@@ -53,9 +53,9 @@
 		849680972049E43E00CF7627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849680962049E43E00CF7627 /* LaunchScreen.storyboard */; };
 		84968099204C829C00CF7627 /* DisplayTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84968098204C829C00CF7627 /* DisplayTicketViewController.swift */; };
 		8496809B204D85B300CF7627 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496809A204D85B300CF7627 /* LocationViewController.swift */; };
-		8496809D204D99F500CF7627 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496809C204D99F500CF7627 /* ReportViewController.swift */; };
 		8496809F204D9B9200CF7627 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496809E204D9B9200CF7627 /* ProfileViewController.swift */; };
 		849680A1204D9EE100CF7627 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849680A0204D9EE100CF7627 /* ContactViewController.swift */; };
+		849680A3204DA78F00CF7627 /* ReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849680A2204DA78F00CF7627 /* ReportTableViewController.swift */; };
 		9B07068A20449877004E9D63 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068920449877004E9D63 /* MenuTableViewController.swift */; };
 		9B07068C2044AE7E004E9D63 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */; };
 		9B0706902044B401004E9D63 /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07068F2044B401004E9D63 /* AddTicketViewController.swift */; };
@@ -118,9 +118,9 @@
 		849680962049E43E00CF7627 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84968098204C829C00CF7627 /* DisplayTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTicketViewController.swift; sourceTree = "<group>"; };
 		8496809A204D85B300CF7627 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		8496809C204D99F500CF7627 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		8496809E204D9B9200CF7627 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		849680A0204D9EE100CF7627 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		849680A2204DA78F00CF7627 /* ReportTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewController.swift; sourceTree = "<group>"; };
 		9B07068920449877004E9D63 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9B07068B2044AE7E004E9D63 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		9B07068F2044B401004E9D63 /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
@@ -242,9 +242,9 @@
 				849680962049E43E00CF7627 /* LaunchScreen.storyboard */,
 				84968098204C829C00CF7627 /* DisplayTicketViewController.swift */,
 				8496809A204D85B300CF7627 /* LocationViewController.swift */,
-				8496809C204D99F500CF7627 /* ReportViewController.swift */,
 				8496809E204D9B9200CF7627 /* ProfileViewController.swift */,
 				849680A0204D9EE100CF7627 /* ContactViewController.swift */,
+				849680A2204DA78F00CF7627 /* ReportTableViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -376,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B88ECF2203F6F7100F69286 /* SignUpViewController.swift in Sources */,
-				8496809D204D99F500CF7627 /* ReportViewController.swift in Sources */,
 				9B07068A20449877004E9D63 /* MenuTableViewController.swift in Sources */,
 				9BD697AD203F38B8007D8E21 /* ViewController.swift in Sources */,
 				8496809F204D9B9200CF7627 /* ProfileViewController.swift in Sources */,
@@ -388,6 +387,7 @@
 				9B88ECF4203F725100F69286 /* HomeViewController.swift in Sources */,
 				9B2122C22045E84D0005994E /* Ticket.swift in Sources */,
 				9BED52D7204091C2008DD693 /* SplashViewController.swift in Sources */,
+				849680A3204DA78F00CF7627 /* ReportTableViewController.swift in Sources */,
 				9B0706902044B401004E9D63 /* AddTicketViewController.swift in Sources */,
 				849680A1204D9EE100CF7627 /* ContactViewController.swift in Sources */,
 			);
