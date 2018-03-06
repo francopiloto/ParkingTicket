@@ -13,11 +13,31 @@ class ViewController: UIViewController
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblVersion: UILabel!
+    @IBOutlet weak var swhRememberMe: UISwitch!
+    
+    var userDefault: UserDefaults!
     
     override func viewDidLoad()
     {
         super.viewDidLoad();
+        
+        userDefault  = UserDefaults.standard;
+        
+        if let email = userDefault.value(forKey: "email") {
+            txtEmail.text = email as? String
+        }
+        
+        if let password = userDefault.value(forKey: "password") {
+            txtPassword.text = password as? String
+        }
+        
         let user = Customer.createAccount(fullName: "Mr. User", email: "user@mail.com", password: "123");
+        
+        if user != nil
+        {
+            txtEmail.text = user?.email;
+            txtPassword.text = user?.password;
+        }
         
         var versionComplete = ""
         
@@ -30,9 +50,6 @@ class ViewController: UIViewController
         }
        
         lblVersion.text = versionComplete;
-        
-        txtEmail.text = user?.email;
-        txtPassword.text = user?.password;
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +60,17 @@ class ViewController: UIViewController
     {
         if Customer.authenticate(email: txtEmail.text ?? "", password: txtPassword.text ?? "") != nil
         {
+            if swhRememberMe.isOn
+            {
+                userDefault.set(txtEmail.text, forKey: "email")
+                userDefault.set(txtPassword.text, forKey: "password")
+            }
+            else
+            {
+                userDefault.removeObject(forKey: "email")
+                userDefault.removeObject(forKey: "password")
+            }
+            
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
             let homeViewController = storyBoard.instantiateViewController(withIdentifier: "MenuVC") as! MenuTableViewController;
             self.present(homeViewController, animated: true, completion: nil);
