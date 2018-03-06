@@ -73,7 +73,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNA-0O-BMF">
                                 <rect key="frame" x="35" y="345" width="303" height="30"/>
@@ -1042,6 +1042,9 @@
                                 <state key="normal" title="Update">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnUpdateClick:" destination="9gw-le-Nsm" eventType="touchUpInside" id="r7b-Pi-ALX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66274509800000003" green="0.20784313730000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1049,7 +1052,11 @@
                     </view>
                     <connections>
                         <outlet property="lblEmail" destination="Mdf-03-Zu6" id="sim-mk-8qI"/>
+                        <outlet property="txtConfirmPassword" destination="O4G-1K-bAa" id="gx8-aT-n9Y"/>
                         <outlet property="txtFullName" destination="1Z7-M4-KdM" id="Kfw-PE-Uws"/>
+                        <outlet property="txtNewPassword" destination="Fns-b1-a7z" id="yIK-cF-CRv"/>
+                        <outlet property="txtOldPassword" destination="l40-hp-fy6" id="Yvu-ma-8b2"/>
+                        <outlet property="txtPhoneNumber" destination="7l8-cN-GWK" id="qMl-yD-cc2"/>
                         <outlet property="txtVehicleNumber" destination="Lsy-Bd-dFr" id="7PF-dN-zEU"/>
                     </connections>
                 </viewController>
@@ -1125,7 +1132,7 @@
         <image name="report.png" width="1600" height="1600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oUA-BD-Nn5"/>
+        <segue reference="Kro-9R-s6g"/>
         <segue reference="RcV-l1-FZ8"/>
     </inferredMetricsTieBreakers>
 </document>

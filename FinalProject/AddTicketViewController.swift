@@ -31,6 +31,9 @@ class AddTicketViewController: UIViewController
     {
         super.viewDidLoad();
         
+        let user = Customer.getAuthenticatedUser();
+        txtVehicleNumber.text = user?.vehicleNumber;
+        
         let dateFormatter = DateFormatter();
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss";
         lblCurrentDate.text = dateFormatter.string(from: Date());

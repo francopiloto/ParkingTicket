@@ -15,6 +15,7 @@ class Customer
     var email:String;
     var password:String;
     var phoneNumber:String?;
+    var vehicleNumber:String?;
     
     private static var customerList = [Int:Customer]();
     private static var currentUser:Customer?;

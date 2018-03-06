@@ -8,19 +8,18 @@
 
 import UIKit
 
-class InstructionViewController: UIViewController {
-
+class InstructionViewController: UIViewController
+{
     @IBOutlet weak var myInstructionView: UIWebView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        loadFile()
-        // Do any additional setup after loading the view.
+        loadFile();
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning();
     }
     
     func loadFile()
@@ -29,15 +28,4 @@ class InstructionViewController: UIViewController {
         let myRequest = NSURLRequest(url: localfilePath!);
         myInstructionView.loadRequest(myRequest as URLRequest);
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

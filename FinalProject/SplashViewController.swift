@@ -8,17 +8,17 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
-
+class SplashViewController: UIViewController
+{
     @IBOutlet weak var progressView: UIProgressView!
     
     var timer = Timer();
     var seconds = 5;
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewDidLoad()
+    {
+        super.viewDidLoad();
+        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showProgress), userInfo: nil, repeats: true);
         
     }
@@ -40,24 +40,9 @@ class SplashViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC");
         self.present(viewController, animated: true, completion: nil);
-        
     }
-    
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning();
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
