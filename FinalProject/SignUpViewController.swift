@@ -51,6 +51,8 @@ class SignUpViewController: UIViewController
         {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
             let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! ViewController;
+            loginViewController.user = customer;
+            
             self.present(loginViewController, animated: true, completion: nil);
         }
     }

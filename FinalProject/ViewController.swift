@@ -16,12 +16,13 @@ class ViewController: UIViewController
     @IBOutlet weak var swhRememberMe: UISwitch!
     
     var userDefault: UserDefaults!
+    var user:Customer?;
     
     override func viewDidLoad()
     {
         super.viewDidLoad();
         
-        userDefault  = UserDefaults.standard;
+        userDefault = UserDefaults.standard;
         
         if let email = userDefault.value(forKey: "email") {
             txtEmail.text = email as? String
@@ -31,7 +32,9 @@ class ViewController: UIViewController
             txtPassword.text = password as? String
         }
         
-        let user = Customer.createAccount(fullName: "Mr. User", email: "user@mail.com", password: "123");
+        if user == nil {
+            user = Customer.createAccount(fullName: "Mr. User", email: "user@mail.com", password: "123");
+        }
         
         if user != nil
         {
