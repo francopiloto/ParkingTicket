@@ -20,13 +20,10 @@ class TicketViewCell: UITableViewCell
     @IBOutlet weak var lblPaymentInfoValue: UILabel!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        super.awakeFromNib();
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        super.setSelected(selected, animated: animated);
     }
 }
