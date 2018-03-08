@@ -177,6 +177,11 @@ class AddTicketViewController: UIViewController
         
         self.present(displayTicketVC, animated: true, completion: nil);
     }
+    
+    // hides PickerView when it looses focus
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension AddTicketViewController : UITextFieldDelegate
@@ -185,6 +190,11 @@ extension AddTicketViewController : UITextFieldDelegate
     {
         selectedComponent = textField.tag;
         showOptions(textField);
+    }
+    
+    // disable editing in the text field
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
 }
 
