@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 
 
-public abstract class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText edtuser;
     EditText edtpass;
