@@ -11,85 +11,147 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.macstudent.parkingticket.db.AppDataBase;
+import com.example.macstudent.parkingticket.model.User;
 
-
-public class LoginActivity extends AppCompatActivity {
-
-    EditText edtuser;
-    EditText edtpass;
-    Button btnlogin;
+/**
+ * Created by C0724671/C0727631 on 2018-04-12.
+ */
+public class LoginActivity extends AppCompatActivity
+{
+    private EditText edtEmail;
+    private EditText edtPassword;
+    private Button btnLogin;
     //Button btnSignUp;
-    CheckBox chkremember;
-    SharedPreferences myPref;
-
+    private CheckBox chkRememberMe;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //1 - Create Shared Preferences Object
-        myPref = getSharedPreferences("mypref", MODE_PRIVATE);
-
-        edtuser = (EditText) findViewById(R.id.edtuser);
+        edtEmail = (EditText) findViewById(R.id.edtuser);
         //edtUserId.setTooltipText("Please enter User ID");
-        edtpass = (EditText) findViewById(R.id.edtpass);
-        chkremember = (CheckBox) findViewById(R.id.chkremember);
-
-
-        //2 - Get saved values from shared preferences
-        String userid = myPref.getString("userid", null);
-        String pwd = myPref.getString("password", null);
-
-        //3 - Set values to Edit text
-        if (userid != null && pwd != null) {
-            edtuser.setText(userid);
-            edtpass.setText(pwd);
-            chkremember.setChecked(true);
-        } else {
-            chkremember.setChecked(false);
-        }
-
-        btnlogin = (Button) findViewById(R.id.btnlogin);
+        edtPassword = (EditText) findViewById(R.id.edtpass);
+        chkRememberMe = (CheckBox) findViewById(R.id.chkremember);
+        btnLogin = (Button) findViewById(R.id.btnlogin);
         //btnSignUp = (Button)findViewById(R.id.btnSignUp);
 
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                if (TextUtils.isEmpty(edtuser.getText()) || edtuser.getText().toString().length() == 0) {
-                    edtuser.setError("Please Enter User Name");
-                } else {
+            public void onClick(View view)
+            {
+                checkSavedPreferences();
 
-                    //DBUser dbUser = new DBUser(LoginActivity.this);
-                    //if (dbUser.isValidUser(edtUserId.getText().toString(), edtPassword.getText().toString()))
-                    if (edtuser.getText().toString().equals("admin") && edtpass.getText().toString().equals("admin")) {
-                        Toast.makeText(LoginActivity.this, "User Successfully logged in ", Toast.LENGTH_LONG).show();
-
-                        //4 - Get editor object
-                        SharedPreferences.Editor editor = myPref.edit();
-                        if (chkremember.isChecked()) {
-                            //5 - Save value to Shared Preferences using editor object
-                            editor.putString("userid", edtuser.getText().toString());
-                            editor.putString("password", edtpass.getText().toString());
-                        } else {
-                            //6 - Remove values from shared preferences
-                            editor.remove("userid");
-                            editor.remove("password");
-                        }
-                        //7 - Save changes permanently to shared preferences
-                        editor.apply();
-
-                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                    } else {
-                        //Intent intent = new Intent(LoginActivity.this, StudentEntryActivity.class);
-                        //startActivity(intent);
-                        Toast.makeText(LoginActivity.this, "UserID/passwords invalid", Toast.LENGTH_LONG).show();
-
-                    }
+                if (userAuthentication())
+                {
+                    updateSavedPreferences();
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 }
             }
         });
+
+        // FIXME: hard coded insertion of a User credentials in the database for testing
+        User user = new User();
+        user.setEmail("admin");
+        user.setPassword("123");
+        user.setFullName("Mr. Admin");
+
+        AppDataBase database = AppDataBase.getAppDataBase(this);
+        database.userDao().insert(user);
+    }
+
+
+    /**
+     * Check if the 'Remember Me' option is selected and fetch the email and password from
+     * the preferences object.
+     */
+    private void checkSavedPreferences()
+    {
+        // create shared preferences object.
+        SharedPreferences preferences = getSharedPreferences("parking-ticket-prefs", MODE_PRIVATE);
+
+        // get saved values from shared preferences.
+        String email = preferences.getString("user-email", null);
+        String password = preferences.getString("user-password", null);
+
+        // set values to the edit text
+        if (email != null && password != null)
+        {
+            edtEmail.setText(email);
+            edtPassword.setText(password);
+
+            chkRememberMe.setChecked(true);
+        }
+        else {
+            chkRememberMe.setChecked(false);
+        }
+    }
+
+
+    private void updateSavedPreferences()
+    {
+        // create shared preferences object.
+        SharedPreferences preferences = getSharedPreferences("parking-ticket-prefs", MODE_PRIVATE);
+
+        // get editor object.
+        SharedPreferences.Editor editor = preferences.edit();
+
+        if (chkRememberMe.isChecked())
+        {
+            // save value to shared preferences using editor object.
+            editor.putString("user-email", edtEmail.getText().toString());
+            editor.putString("user-password", edtPassword.getText().toString());
+        }
+        else
+        {
+            // remove values from shared preferences.
+            editor.remove("user-email");
+            editor.remove("user-password");
+        }
+
+        // save changes permanently into shared preferences.
+        editor.apply();
+    }
+
+
+    /**
+     * Perform the user authentication process.
+     */
+    private boolean userAuthentication()
+    {
+        // check for blank or invalid inputs
+        if (TextUtils.isEmpty(edtEmail.getText()) || edtEmail.getText().toString().length() == 0)
+        {
+            edtEmail.setError("Please enter a valid email."); // TODO: call validate function for email
+            return false;
+        }
+
+        if (TextUtils.isEmpty(edtPassword.getText()) || edtPassword.getText().toString().length() == 0)
+        {
+            edtPassword.setError("Please enter your password.");
+            return false;
+        }
+
+        // check user credentials in the database
+        AppDataBase database = AppDataBase.getAppDataBase(this);
+        User user = database.userDao().findByEmail(edtEmail.getText().toString());
+
+        if (user == null)
+        {
+            Toast.makeText(this, "User not found.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        if (!user.getPassword().equals(edtPassword.getText().toString()))
+        {
+            Toast.makeText(this, "Invalid password.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        return true;
     }
 }
