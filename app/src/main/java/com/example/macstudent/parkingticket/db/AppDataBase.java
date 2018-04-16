@@ -5,18 +5,20 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.example.macstudent.parkingticket.model.Ticket;
 import com.example.macstudent.parkingticket.model.User;
 
 /**
  * Created by C0724671/C0727631 on 2018-04-12.
  */
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class, Ticket.class}, version = 2)
 public abstract class AppDataBase extends RoomDatabase
 {
     private static AppDataBase instance;
 
     public abstract UserDao userDao();
+    public abstract TicketDao ticketDao();
 
     /**
      * Singleton design pattern to instantiating an AppDatabase object.
@@ -30,7 +32,10 @@ public abstract class AppDataBase extends RoomDatabase
         {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     AppDataBase.class,
-                    "parking-ticked-db").allowMainThreadQueries().build();
+                    "parking-ticked-db")
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
+                    .build();
         }
 
         return instance;

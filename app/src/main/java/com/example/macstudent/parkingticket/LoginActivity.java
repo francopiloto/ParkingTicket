@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.macstudent.parkingticket.db.AppDataBase;
 import com.example.macstudent.parkingticket.model.User;
+import com.example.macstudent.parkingticket.util.Utils;
 
 /**
  * Created by C0724671/C0727631 on 2018-04-12.
@@ -37,13 +39,22 @@ public class LoginActivity extends AppCompatActivity
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnSignUp = (Button)findViewById(R.id.btnSingUp);
 
+        User user = getIntent().getParcelableExtra("user");
+
+        if (user != null)
+        {
+            edtEmail.setText(user.getEmail());
+            edtPassword.setText(user.getPassword());
+        }
+        else {
+            checkSavedPreferences();
+        }
+
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                checkSavedPreferences();
-
                 if (userAuthentication())
                 {
                     updateSavedPreferences();
@@ -62,7 +73,7 @@ public class LoginActivity extends AppCompatActivity
 
         // FIXME: hard coded insertion of a User credentials in the database for testing
         AppDataBase database = AppDataBase.getAppDataBase(this);
-        User user = database.userDao().findByEmail("admin");
+        user = database.userDao().findByEmail("admin");
 
         if (user == null)
         {
@@ -135,13 +146,13 @@ public class LoginActivity extends AppCompatActivity
     private boolean userAuthentication()
     {
         // check for blank or invalid inputs
-        if (TextUtils.isEmpty(edtEmail.getText()) || edtEmail.getText().toString().length() == 0)
+        if (Utils.isEmpty(edtEmail) || !Utils.isValidEmail(edtEmail.getText().toString()))
         {
-            edtEmail.setError("Please enter a valid email."); // TODO: call validate function for email
+            edtEmail.setError("Please enter a valid email.");
             return false;
         }
 
-        if (TextUtils.isEmpty(edtPassword.getText()) || edtPassword.getText().toString().length() == 0)
+        if (Utils.isEmpty(edtPassword))
         {
             edtPassword.setError("Please enter your password.");
             return false;

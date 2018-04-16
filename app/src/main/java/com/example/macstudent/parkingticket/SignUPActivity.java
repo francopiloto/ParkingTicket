@@ -1,15 +1,15 @@
 package com.example.macstudent.parkingticket;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.macstudent.parkingticket.db.AppDataBase;
 import com.example.macstudent.parkingticket.model.User;
+import com.example.macstudent.parkingticket.util.Utils;
 
 public class SignUPActivity extends AppCompatActivity
 {
@@ -43,6 +43,10 @@ public class SignUPActivity extends AppCompatActivity
                 createAccount();
             }
         });
+
+        edtFullName = findViewById(R.id.edtFullName);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtPassword = findViewById(R.id.edtPassword);
     }
 
     /**
@@ -51,19 +55,19 @@ public class SignUPActivity extends AppCompatActivity
     private void createAccount()
     {
         // check for blank or invalid inputs
-        if (TextUtils.isEmpty(edtFullName.getText()) || edtFullName.getText().toString().length() == 0)
+        if (Utils.isEmpty(edtFullName))
         {
             edtFullName.setError("Please enter your full name.");
             return;
         }
 
-        if (TextUtils.isEmpty(edtEmail.getText()) || edtEmail.getText().toString().length() == 0)
+        if (Utils.isEmpty(edtEmail) || !Utils.isValidEmail(edtEmail.getText().toString()))
         {
-            edtEmail.setError("Please enter a valid email."); // TODO: call validate function for email
+            edtEmail.setError("Please enter a valid email.");
             return;
         }
 
-        if (TextUtils.isEmpty(edtPassword.getText()) || edtPassword.getText().toString().length() == 0)
+        if (Utils.isEmpty(edtPassword))
         {
             edtPassword.setError("Please enter a valid password.");
             return;
@@ -86,5 +90,9 @@ public class SignUPActivity extends AppCompatActivity
         user.setPassword(edtPassword.getText().toString());
 
         database.userDao().insert(user);
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
     }
 }
