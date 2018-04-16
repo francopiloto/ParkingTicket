@@ -20,6 +20,9 @@ public interface UserDao
     @Query("SELECT * FROM user WHERE email = :email LIMIT 1")
     public User findByEmail(String email);
 
+    @Query("SELECT MAX(id) FROM user")
+    public int findMaxId();
+
     @Insert
     public void insert(User user);
 

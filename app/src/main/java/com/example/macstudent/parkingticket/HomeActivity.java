@@ -45,7 +45,7 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
-        txtUserName = (TextView)findViewById(R.id.edtuser);
+        txtUserName = (TextView)findViewById(R.id.edtEmail);
 
         SharedPreferences sharedPreferences = getSharedPreferences("mypref", MODE_PRIVATE);
         String userName = sharedPreferences.getString("userid", null);

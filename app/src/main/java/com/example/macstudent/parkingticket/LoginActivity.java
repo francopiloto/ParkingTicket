@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity
     private EditText edtEmail;
     private EditText edtPassword;
     private Button btnLogin;
-    //Button btnSignUp;
+    private Button btnSignUp;
     private CheckBox chkRememberMe;
 
     @Override
@@ -31,13 +31,11 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        edtEmail = (EditText) findViewById(R.id.edtuser);
-        //edtUserId.setTooltipText("Please enter User ID");
-        edtPassword = (EditText) findViewById(R.id.edtpass);
-        chkRememberMe = (CheckBox) findViewById(R.id.chkremember);
-        btnLogin = (Button) findViewById(R.id.btnlogin);
-        //btnSignUp = (Button)findViewById(R.id.btnSignUp);
-
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
+        edtPassword = (EditText) findViewById(R.id.edtPassword);
+        chkRememberMe = (CheckBox) findViewById(R.id.chkRememberMe);
+        btnLogin = (Button) findViewById(R.id.btnLogin);
+        btnSignUp = (Button)findViewById(R.id.btnSingUp);
 
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
@@ -54,14 +52,27 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
-        // FIXME: hard coded insertion of a User credentials in the database for testing
-        User user = new User();
-        user.setEmail("admin");
-        user.setPassword("123");
-        user.setFullName("Mr. Admin");
+        btnSignUp.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, SignUPActivity.class));
+            }
+        });
 
+        // FIXME: hard coded insertion of a User credentials in the database for testing
         AppDataBase database = AppDataBase.getAppDataBase(this);
-        database.userDao().insert(user);
+        User user = database.userDao().findByEmail("admin");
+
+        if (user == null)
+        {
+            user = new User();
+            user.setEmail("admin");
+            user.setPassword("123");
+            user.setFullName("Mr. Admin");
+
+            database.userDao().insert(user);
+        }
     }
 
 
