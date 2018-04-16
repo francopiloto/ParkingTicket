@@ -21,15 +21,23 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.macstudent.parkingticket.db.AppDataBase;
+import com.example.macstudent.parkingticket.model.Ticket;
+import com.example.macstudent.parkingticket.model.User;
+
+import java.util.List;
+
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+{
     TextView txtUserName;
+    private TextView txtNumTickets;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,6 +70,13 @@ public class HomeActivity extends AppCompatActivity
                 txtUserName.setText("Welcome, " + userName);
             }
         }
+
+        User user = getIntent().getParcelableExtra("user");
+        AppDataBase database = AppDataBase.getAppDataBase(this);
+        List<Ticket> tickets = database.ticketDao().findAll(user.getId());
+
+        txtNumTickets = findViewById(R.id.txtNumTickets);
+        txtNumTickets.setText(String.valueOf(tickets.size()));
     }
 
     @Override

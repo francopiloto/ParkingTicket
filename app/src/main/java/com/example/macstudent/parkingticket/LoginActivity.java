@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.macstudent.parkingticket.db.AppDataBase;
+import com.example.macstudent.parkingticket.model.Ticket;
 import com.example.macstudent.parkingticket.model.User;
 import com.example.macstudent.parkingticket.util.Utils;
 
@@ -55,10 +56,14 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                if (userAuthentication())
+                User user = userAuthentication();
+
+                if (user != null)
                 {
                     updateSavedPreferences();
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
                 }
             }
         });
@@ -143,19 +148,19 @@ public class LoginActivity extends AppCompatActivity
     /**
      * Perform the user authentication process.
      */
-    private boolean userAuthentication()
+    private User userAuthentication()
     {
         // check for blank or invalid inputs
         if (Utils.isEmpty(edtEmail) || !Utils.isValidEmail(edtEmail.getText().toString()))
         {
             edtEmail.setError("Please enter a valid email.");
-            return false;
+            return null;
         }
 
         if (Utils.isEmpty(edtPassword))
         {
             edtPassword.setError("Please enter your password.");
-            return false;
+            return null;
         }
 
         // check user credentials in the database
@@ -165,15 +170,15 @@ public class LoginActivity extends AppCompatActivity
         if (user == null)
         {
             Toast.makeText(this, "User not found.", Toast.LENGTH_LONG).show();
-            return false;
+            return null;
         }
 
         if (!user.getPassword().equals(edtPassword.getText().toString()))
         {
             Toast.makeText(this, "Invalid password.", Toast.LENGTH_LONG).show();
-            return false;
+            return null;
         }
 
-        return true;
+        return user;
     }
 }
