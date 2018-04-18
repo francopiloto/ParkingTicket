@@ -126,7 +126,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(HomeActivity.this, HomeActivity.class));
         } else if (id == R.id.nav_addticket) {
 
-            startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+            startActivity(new Intent(HomeActivity.this, AddParkingTicketActivity.class));
 
         } else if (id == R.id.nav_location) {
             Intent intent = new Intent(Intent.ACTION_VIEW);

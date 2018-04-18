@@ -14,6 +14,48 @@
 
     <string name="action_settings">Settings</string>
 
+    <string-array name="brand_arrays">
+        <item>Audi</item>
+        <item>Ford</item>
+        <item>Chevrolet</item>
+        <item>Volkswagem</item>
+        <item>Hyundai</item>
+        <item>Honda</item>
+        <item>Toytota</item>
+        <item>India</item>
+    </string-array>
+
+    <string-array name="color_arrays">
+        <item>Blue</item>
+        <item>Silver</item>
+        <item>Black</item>
+        <item>White</item>
+        <item>Gray</item>
+        <item>Red</item>
+    </string-array>
+
+    <string-array name="lane_arrays">
+        <item>Lane A</item>
+        <item>Lane B</item>
+        <item>Lane C</item>
+        <item>Lane D</item>
+    </string-array>
+
+
+    <string-array name="level_arrays">
+        <item>P1</item>
+        <item>P2</item>
+        <item>P3</item>
+        <item>P4</item>
+        <item>P5</item>
+    </string-array>
+
+
+    <string-array name="payment_arrays">
+        <item>Credit Card</item>
+        <item>Debit</item>
+        <item>Cash</item>
+    </string-array>
 
 </resources>
 
