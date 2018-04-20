@@ -34,6 +34,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 {
     TextView txtUserName;
     private TextView txtNumTickets;
+    private TextView textFullName;
+    private TextView textUserEmail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -77,6 +80,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         txtNumTickets = findViewById(R.id.txtNumTickets);
         txtNumTickets.setText(String.valueOf(tickets.size()));
+
+        View header = navigationView.getHeaderView(0);
+        textFullName = header.findViewById(R.id.textFullName);
+        textFullName.setText(user.getFullName());
+
+        textUserEmail = header.findViewById(R.id.textUserEmail);
+        textUserEmail.setText(user.getEmail());
     }
 
     @Override
@@ -89,31 +99,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast.makeText(HomeActivity.this,"Setting", Toast.LENGTH_LONG).show();
-        }else if (id == R.id.action_save) {
-            Toast.makeText(HomeActivity.this,"Save", Toast.LENGTH_LONG).show();
-        }else if (id == R.id.action_1) {
-            Toast.makeText(HomeActivity.this,"Student List", Toast.LENGTH_LONG).show();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -150,33 +135,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         }else if (id == R.id.nav_contact) {
 
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(HomeActivity.this);
-                    alertDialogBuilder.setTitle("Parking Ticket");
-                    alertDialogBuilder.setMessage("Contact Information:                                        Phone: +1123456789                               email: contact@aslan.com");
-                    alertDialogBuilder.setCancelable(false);
-                    alertDialogBuilder.setIcon(android.R.drawable.ic_dialog_alert);
-                    alertDialogBuilder.setPositiveButton("DISCARD", new DialogInterface.OnClickListener()
-                    {
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        // continue with discard
-                            Crouton.showText(HomeActivity.this, "Success", Style.ALERT);
-                            //Toast.makeText(MainActivity.this, "Discard", Toast.LENGTH_SHORT).show();
-                            }
-                    });
-
-                    alertDialogBuilder.show();
-
-           //      }
-           // });
-
-
-
-
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(HomeActivity.this);
+            alertDialogBuilder.setTitle("Parking Ticket");
+            alertDialogBuilder.setMessage("Contact Information:\nPhone: +1123456789\nemail: contact@aslan.com");
+            alertDialogBuilder.setCancelable(false);
+            alertDialogBuilder.setIcon(android.R.drawable.ic_dialog_alert);
+            alertDialogBuilder.setPositiveButton("DISCARD", new DialogInterface.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    Crouton.showText(HomeActivity.this, "Success", Style.ALERT);
+                }
+            });
+            alertDialogBuilder.show();
         } else if (id == R.id.nav_logout) {
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
