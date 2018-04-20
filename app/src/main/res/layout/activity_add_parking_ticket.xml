@@ -7,7 +7,7 @@
     tools:context="com.example.macstudent.parkingticket.AddParkingTicketActivity">
 
     <EditText
-        android:id="@+id/txtVehicleNumber"
+        android:id="@+id/edtVehicleNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -18,7 +18,7 @@
         android:hint="Enter Vehicle Number"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imgVehicleBrand"
         app:layout_constraintTop_toBottomOf="@+id/txtTotalCost" />
 
     <TextView
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spnbrand"
+        android:id="@+id/spnVehicleBrand"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
@@ -61,10 +61,10 @@
         android:layout_marginTop="8dp"
         android:entries="@array/brand_arrays"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/txtVehicleNumber" />
+        app:layout_constraintStart_toEndOf="@+id/imgVehicleBrand"
+        app:layout_constraintTop_toBottomOf="@+id/edtVehicleNumber" />
     <Spinner
-        android:id="@+id/spncolor"
+        android:id="@+id/spnColor"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
@@ -73,7 +73,7 @@
         android:entries="@array/color_arrays"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnbrand" />
+        app:layout_constraintTop_toBottomOf="@+id/spnVehicleBrand" />
 
 
 
@@ -86,7 +86,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spncolor"
+        app:layout_constraintTop_toBottomOf="@+id/spnColor"
         android:orientation="vertical">
 
         <RadioButton
@@ -133,7 +133,7 @@
     </RadioGroup>
 
     <Spinner
-        android:id="@+id/spnlane"
+        android:id="@+id/spnLane"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
@@ -145,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radiotiming" />
 
     <Spinner
-        android:id="@+id/spnlevel"
+        android:id="@+id/spnLevel"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
@@ -154,10 +154,10 @@
         android:entries="@array/level_arrays"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnlane" />
+        app:layout_constraintTop_toBottomOf="@+id/spnLane" />
 
     <Spinner
-        android:id="@+id/spnpayment"
+        android:id="@+id/spnPayment"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginEnd="8dp"
@@ -166,16 +166,17 @@
         android:entries="@array/payment_arrays"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnlevel" />
+        app:layout_constraintTop_toBottomOf="@+id/spnLevel" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgVehicleBrand"
         android:layout_width="98dp"
         android:layout_height="96dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTotalCost" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalCost"
+        tools:background="@drawable/acura" />
 
 </android.support.constraint.ConstraintLayout>
