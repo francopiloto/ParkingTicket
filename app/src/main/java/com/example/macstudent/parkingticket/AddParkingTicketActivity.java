@@ -48,7 +48,7 @@ public class AddParkingTicketActivity extends AppCompatActivity
         txtCurrentDate = findViewById(R.id.txtCurrentDate);
         txtCurrentDate.setText(Utils.formatDate(new Date()));
 
-        User user = LoginActivity.getAuthenticatedUser();
+        User user =  ((MyApplication)getApplicationContext()).getUser();
         edtVehicleNumber = findViewById(R.id.edtVehicleNumber);
         edtVehicleNumber.setText(user != null ? user.getVehicleNumber() : "");
 
@@ -190,7 +190,7 @@ public class AddParkingTicketActivity extends AppCompatActivity
         ticket.setParkingTime(parkingTime);
         ticket.setPaymentMethod(spnPayment.getSelectedItem().toString());
         ticket.setPrice(price);
-        ticket.setUserId(LoginActivity.getAuthenticatedUser().getId());
+        ticket.setUserId(((MyApplication)getApplicationContext()).getUser().getId());
         ticket.setVehicleNumber(edtVehicleNumber.getText().toString());
         ticket.setVehicleMaker(spnVehicleBrand.getSelectedItem().toString());
         ticket.setVehicleColor(spnColor.getSelectedItem().toString());

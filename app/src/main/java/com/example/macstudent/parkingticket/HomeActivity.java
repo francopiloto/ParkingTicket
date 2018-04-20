@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         }
 
-        User user = LoginActivity.getAuthenticatedUser();
+        User user =  ((MyApplication)getApplicationContext()).getUser();
         AppDataBase database = AppDataBase.getAppDataBase(this);
         List<Ticket> tickets = database.ticketDao().findAll(user.getId());
 

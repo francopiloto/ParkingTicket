@@ -34,7 +34,9 @@ public class UpdateProfileActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
-        user = LoginActivity.getAuthenticatedUser();
+        //user = LoginActivity.getAuthenticatedUser();
+
+        user = ((MyApplication)getApplicationContext()).getUser();
 
         txtEmail = findViewById(R.id.txtEmail);
         txtEmail.setText(user.getEmail());
