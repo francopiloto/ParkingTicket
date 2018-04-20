@@ -12,16 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <EditText
-        android:id="@+id/edtvehicle"
+        android:id="@+id/edtVehicleNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -35,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtFullName" />
 
     <EditText
-        android:id="@+id/edtphone"
+        android:id="@+id/edtPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -45,10 +44,10 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtvehicle" />
+        app:layout_constraintTop_toBottomOf="@+id/edtVehicleNumber" />
 
     <EditText
-        android:id="@+id/edtoldpass"
+        android:id="@+id/edtOldPassword"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:layout_marginEnd="8dp"
@@ -58,10 +57,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtphone" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
 
     <EditText
-        android:id="@+id/edtnewpass"
+        android:id="@+id/edtNewPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -71,10 +70,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtoldpass" />
+        app:layout_constraintTop_toBottomOf="@+id/edtOldPassword" />
 
     <EditText
-        android:id="@+id/edtnewpass2"
+        android:id="@+id/edtConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -84,10 +83,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtnewpass" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNewPassword" />
 
     <Button
-        android:id="@+id/btnupdate"
+        android:id="@+id/btnUpdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -95,6 +94,19 @@
         android:text="UPDATE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtnewpass2" />
+        app:layout_constraintTop_toBottomOf="@+id/edtConfirmPassword" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
