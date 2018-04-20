@@ -28,6 +28,12 @@ public class LoginActivity extends AppCompatActivity
     private Button btnSignUp;
     private CheckBox chkRememberMe;
 
+    private static User currentUser;
+
+    public static User getAuthenticatedUser() {
+        return currentUser;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -57,6 +63,7 @@ public class LoginActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 User user = userAuthentication();
+                currentUser = user;
 
                 if (user != null)
                 {
@@ -75,20 +82,6 @@ public class LoginActivity extends AppCompatActivity
                 startActivity(new Intent(LoginActivity.this, SignUPActivity.class));
             }
         });
-
-        // FIXME: hard coded insertion of a User credentials in the database for testing
-        AppDataBase database = AppDataBase.getAppDataBase(this);
-        user = database.userDao().findByEmail("admin");
-
-        if (user == null)
-        {
-            user = new User();
-            user.setEmail("admin");
-            user.setPassword("123");
-            user.setFullName("Mr. Admin");
-
-            database.userDao().insert(user);
-        }
     }
 
 
