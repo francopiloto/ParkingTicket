@@ -54,6 +54,8 @@
         android:id="@+id/chkRememberMe"
         android:layout_width="135dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Remember Me"
         app:layout_constraintStart_toStartOf="parent"

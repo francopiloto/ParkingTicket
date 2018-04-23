@@ -125,7 +125,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
 
         } else if (id == R.id.nav_report) {
-            startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+            startActivity(new Intent(HomeActivity.this, TicketReportActivity.class));
 
         } else if (id == R.id.nav_profile) {
             startActivity(new Intent(HomeActivity.this, UpdateProfileActivity.class));

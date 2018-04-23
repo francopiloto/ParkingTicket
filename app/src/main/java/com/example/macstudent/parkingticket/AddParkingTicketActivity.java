@@ -141,7 +141,8 @@ public class AddParkingTicketActivity extends AppCompatActivity
     private void loadVehicleBrandIcon(String filename)
     {
         int id = imgVehicleBrand.getContext().getResources().getIdentifier(
-                filename.toLowerCase().toLowerCase().replace('-','_'), "drawable", getPackageName());
+                filename.toLowerCase().replace('-','_'),
+                "drawable", getPackageName());
         imgVehicleBrand.setBackgroundResource(id);
     }
 
