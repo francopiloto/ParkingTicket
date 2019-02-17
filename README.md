@@ -9,4 +9,6 @@ Developed for IOS and Android.
 * IOS, Swift, XCode
 * UI Components:  Segues, Intents, Fragments, RecyclerViews, TableViews,
 
-## Screenshots
+## Demo
+
+<img src = "demo.gif">
